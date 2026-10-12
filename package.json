@@ -1,0 +1,26 @@
+{
+  "name": "starter-basic",
+  "version": "1.0.0",
+  "description": "Basic starter files for a coding project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/P4sc4l94/starter-basic.git"
+  },
+  "keywords": [
+    "starter",
+    "sass",
+    "scss",
+    "html",
+    "js"
+  ],
+  "author": "kat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/P4sc4l94/starter-basic/issues"
+  },
+  "homepage": "https://github.com/P4sc4l94/starter-basic#readme"
+}

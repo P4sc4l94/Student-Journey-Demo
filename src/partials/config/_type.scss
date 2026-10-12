@@ -1,0 +1,15 @@
+@use 'sass:color';
+@use 'sass:math';
+@use 'variables' as *;
+@use '../utilities' as *;
+
+// ================
+// TYPOGRAPHY
+// ================
+
+*,
+*::before,
+*::after {
+  -webkit-font-smooting: antialiased;
+  -moz-osx-font-smooting: grayscale;
+}
