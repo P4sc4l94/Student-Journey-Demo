@@ -1,0 +1,14 @@
+*,
+*::before,
+*::after {
+  -webkit-font-smooting: antialiased;
+  -moz-osx-font-smooting: grayscale;
+  box-sizing: inherit;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-font-smooting: antialiased;
+  -moz-osx-font-smooting: grayscale;
+}/*# sourceMappingURL=styles.css.map */
