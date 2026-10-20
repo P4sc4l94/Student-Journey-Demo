@@ -13,3 +13,147 @@
   -webkit-font-smooting: antialiased;
   -moz-osx-font-smooting: grayscale;
 }
+
+html {
+  line-height: 1.4;
+  // font-family: $f-bodyFont;
+  color: black;
+  scroll-behavior: smooth;
+  text-wrap: pretty;
+  font-size: 100%;
+}
+
+body {
+  @include fluidRem("font-size", 0.9375rem, 1.125rem);
+}
+
+// ================
+// Headlines
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1rem;
+  // font-family: $f-headlineFont;
+  line-height: 1.2;
+}
+
+h1{
+  @include fluidRem("font-size", 2rem, 3rem);
+}
+
+h2 {
+  @include fluidRem("font-size", 1.75rem, 2.5rem);
+}
+
+h3 {
+  @include fluidRem("font-size", 1.5rem, 2.25rem);
+}
+
+h4 {
+  @include fluidRem("font-size", 1.375rem, 1.875rem);
+}
+
+h5 {
+  @include fluidRem("font-size", 1.25rem, 1.5rem);
+}
+
+h6 {
+  @include fluidRem("font-size", 1.125rem, 1.25rem);
+}
+
+// ================
+// Body Copy
+
+p,
+ul,
+ol,
+blockquote,
+address {
+  margin: 0 0 1rem;
+  font-style: normal;
+}
+
+ul,
+ol {
+  margin: 1rem 0 1rem 1.5rem;
+
+  li {
+  }
+}
+
+// @include fancyList on ul element. 
+// Use to add extra styling to list elements.
+@mixin fancyList {
+  margin: 0;
+
+  li {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+  
+    &:before {
+      content: $i-check;
+      font-family: $f-iconFont;
+      display: inline-block;
+      position: relative;
+    }
+
+    & ~ li {
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+
+a {
+  color: $c-link;
+  transition: $t-transition;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: darken($c-link, 20%);
+  }
+ 
+  &:focus-visible {
+    outline: $x-focusOutline;
+    outline-offset: $d-focusOutlineOffset;
+  }
+}
+
+// @include reversed-link on <a> element
+@mixin reversed-link {
+  color: white;
+
+  &:hover,
+  &:focus {
+    color: white;
+  }
+}
+
+%small,
+small,
+.copyright {
+  font-size: 0.875em;
+  font-style: italic;
+}
+
+// ================
+// Other Type Styles
+
+.error,
+.val-header {
+  color: $c-error;
+}
+
+hr {
+  margin-bottom: 1rem;
+}
+
+.nobr {
+  white-space: nowrap;
+}

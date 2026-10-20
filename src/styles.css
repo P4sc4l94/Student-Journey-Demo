@@ -1,9 +1,193 @@
 *,
 *::before,
 *::after {
-  -webkit-font-smooting: antialiased;
-  -moz-osx-font-smooting: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   box-sizing: inherit;
+}
+
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+}
+
+img,
+embed,
+iframe,
+object,
+audio,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe,
+fieldset {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+  text-align: left;
+}
+
+.hidden,
+[hidden] {
+  display: none !important;
+  visibility: hidden;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.nobreak {
+  white-space: nowrap;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+     -moz-appearance: button;
+          appearance: button;
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-cancel-button,
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+          appearance: button;
+  font: inherit;
+}
+
+summary {
+  display: list-item;
 }
 
 *,
@@ -11,4 +195,422 @@
 *::after {
   -webkit-font-smooting: antialiased;
   -moz-osx-font-smooting: grayscale;
+}
+
+html {
+  line-height: 1.4;
+  color: black;
+  scroll-behavior: smooth;
+  text-wrap: pretty;
+  font-size: 100%;
+}
+
+body {
+  font-size: 0.9375rem;
+}
+@media (min-width: 18.75rem) {
+  body {
+    font-size: calc(0.9375rem + 0.1875 * (100vw - 18.75rem) / 56.25);
+  }
+}
+@media (min-width: 75rem) {
+  body {
+    font-size: 1.125rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2rem;
+}
+@media (min-width: 18.75rem) {
+  h1 {
+    font-size: calc(2rem + 1 * (100vw - 18.75rem) / 56.25);
+  }
+}
+@media (min-width: 75rem) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+@media (min-width: 18.75rem) {
+  h2 {
+    font-size: calc(1.75rem + 0.75 * (100vw - 18.75rem) / 56.25);
+  }
+}
+@media (min-width: 75rem) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+@media (min-width: 18.75rem) {
+  h3 {
+    font-size: calc(1.5rem + 0.75 * (100vw - 18.75rem) / 56.25);
+  }
+}
+@media (min-width: 75rem) {
+  h3 {
+    font-size: 2.25rem;
+  }
+}
+
+h4 {
+  font-size: 1.375rem;
+}
+@media (min-width: 18.75rem) {
+  h4 {
+    font-size: calc(1.375rem + 0.5 * (100vw - 18.75rem) / 56.25);
+  }
+}
+@media (min-width: 75rem) {
+  h4 {
+    font-size: 1.875rem;
+  }
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+@media (min-width: 18.75rem) {
+  h5 {
+    font-size: calc(1.25rem + 0.25 * (100vw - 18.75rem) / 56.25);
+  }
+}
+@media (min-width: 75rem) {
+  h5 {
+    font-size: 1.5rem;
+  }
+}
+
+h6 {
+  font-size: 1.125rem;
+}
+@media (min-width: 18.75rem) {
+  h6 {
+    font-size: calc(1.125rem + 0.125 * (100vw - 18.75rem) / 56.25);
+  }
+}
+@media (min-width: 75rem) {
+  h6 {
+    font-size: 1.25rem;
+  }
+}
+
+p,
+ul,
+ol,
+blockquote,
+address {
+  margin: 0 0 1rem;
+  font-style: normal;
+}
+
+ul,
+ol {
+  margin: 1rem 0 1rem 1.5rem;
+}
+a {
+  color: blue;
+  transition: all 0.25s ease-in-out;
+}
+a:hover, a:focus {
+  text-decoration: none;
+  color: #000099;
+}
+a:focus-visible {
+  outline: 3px solid orange;
+  outline-offset: 1px;
+}
+
+small,
+.copyright {
+  font-size: 0.875em;
+  font-style: italic;
+}
+
+.error,
+.val-header {
+  color: red;
+}
+
+hr {
+  margin-bottom: 1rem;
+}
+
+.nobr {
+  white-space: nowrap;
+}
+
+@-o-viewport {
+  width: device-width;
+  zoom: 1;
+}
+
+@viewport {
+  width: device-width;
+  zoom: 1;
+}
+.center {
+  width: 90%;
+  max-width: 87.5rem;
+  margin: auto;
+}
+
+button.button, .button button,
+a.button,
+.button a,
+input.button,
+.button input, button,
+.type_event_button a,
+input[type=submit],
+input[type=button], button.minor-button, .minor-button button,
+a.minor-button,
+.minor-button a,
+input.minor-button,
+.minor-button input, button.major-button, .major-button button,
+a.major-button,
+.major-button a,
+input.major-button,
+.major-button input {
+  background: black;
+  color: white;
+  border: 1px solid transparent;
+}
+a.button:hover,
+.button a:hover,
+input.button:hover,
+.button input:hover, button:hover,
+.type_event_button a:hover,
+input[type=submit]:hover,
+input[type=button]:hover,
+a.minor-button:hover,
+.minor-button a:hover,
+input.minor-button:hover,
+.minor-button input:hover,
+a.major-button:hover,
+.major-button a:hover,
+input.major-button:hover,
+.major-button input:hover,
+a.button:focus,
+.button a:focus,
+input.button:focus,
+.button input:focus, button:focus,
+.type_event_button a:focus,
+input[type=submit]:focus,
+input[type=button]:focus,
+a.minor-button:focus,
+.minor-button a:focus,
+input.minor-button:focus,
+.minor-button input:focus,
+a.major-button:focus,
+.major-button a:focus,
+input.major-button:focus,
+.major-button input:focus {
+  background: white;
+  color: black;
+  border: 1px solid transparent;
+}
+button.button, .button button,
+a.button,
+.button a,
+input.button,
+.button input, button,
+.type_event_button a,
+input[type=submit],
+input[type=button], button.minor-button, .minor-button button,
+a.minor-button,
+.minor-button a,
+input.minor-button,
+.minor-button input, button.major-button, .major-button button,
+a.major-button,
+.major-button a,
+input.major-button,
+.major-button input {
+  font-size: 1rem;
+}
+@media (min-width: 18.75rem) {
+  button.button, .button button,
+  a.button,
+  .button a,
+  input.button,
+  .button input, button,
+  .type_event_button a,
+  input[type=submit],
+  input[type=button], button.minor-button, .minor-button button,
+  a.minor-button,
+  .minor-button a,
+  input.minor-button,
+  .minor-button input, button.major-button, .major-button button,
+  a.major-button,
+  .major-button a,
+  input.major-button,
+  .major-button input {
+    font-size: calc(1rem + 0.15 * (100vw - 18.75rem) / 56.25);
+  }
+}
+@media (min-width: 75rem) {
+  button.button, .button button,
+  a.button,
+  .button a,
+  input.button,
+  .button input, button,
+  .type_event_button a,
+  input[type=submit],
+  input[type=button], button.minor-button, .minor-button button,
+  a.minor-button,
+  .minor-button a,
+  input.minor-button,
+  .minor-button input, button.major-button, .major-button button,
+  a.major-button,
+  .major-button a,
+  input.major-button,
+  .major-button input {
+    font-size: 1.15rem;
+  }
+}
+button.button, .button button,
+a.button,
+.button a,
+input.button,
+.button input, button,
+.type_event_button a,
+input[type=submit],
+input[type=button], button.minor-button, .minor-button button,
+a.minor-button,
+.minor-button a,
+input.minor-button,
+.minor-button input, button.major-button, .major-button button,
+a.major-button,
+.major-button a,
+input.major-button,
+.major-button input {
+  transition: all 0.25s ease-in-out;
+  display: block;
+  width: 100%;
+  padding: 0.65em 1.5em;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-family: "";
+  font-weight: bold;
+  outline: 0;
+  line-height: 1.2;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0;
+}
+a.button:focus-visible,
+.button a:focus-visible,
+input.button:focus-visible,
+.button input:focus-visible, button:focus-visible,
+.type_event_button a:focus-visible,
+input[type=submit]:focus-visible,
+input[type=button]:focus-visible,
+a.minor-button:focus-visible,
+.minor-button a:focus-visible,
+input.minor-button:focus-visible,
+.minor-button input:focus-visible,
+a.major-button:focus-visible,
+.major-button a:focus-visible,
+input.major-button:focus-visible,
+.major-button input:focus-visible {
+  outline: 3px solid orange;
+  outline-offset: 1px;
+}
+@media (min-width: 31.25rem) {
+  button.button, .button button,
+  a.button,
+  .button a,
+  input.button,
+  .button input, button,
+  .type_event_button a,
+  input[type=submit],
+  input[type=button], button.minor-button, .minor-button button,
+  a.minor-button,
+  .minor-button a,
+  input.minor-button,
+  .minor-button input, button.major-button, .major-button button,
+  a.major-button,
+  .major-button a,
+  input.major-button,
+  .major-button input {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+button.major-button, .major-button button,
+a.major-button,
+.major-button a,
+input.major-button,
+.major-button input {
+  font-size: 1.25rem;
+}
+@media (min-width: 18.75rem) {
+  button.major-button, .major-button button,
+  a.major-button,
+  .major-button a,
+  input.major-button,
+  .major-button input {
+    font-size: calc(1.25rem + 0.25 * (100vw - 18.75rem) / 56.25);
+  }
+}
+@media (min-width: 75rem) {
+  button.major-button, .major-button button,
+  a.major-button,
+  .major-button a,
+  input.major-button,
+  .major-button input {
+    font-size: 1.5rem;
+  }
+}
+button.minor-button, .minor-button button,
+a.minor-button,
+.minor-button a,
+input.minor-button,
+.minor-button input {
+  font-size: 0.78rem;
+}
+@media (min-width: 18.75rem) {
+  button.minor-button, .minor-button button,
+  a.minor-button,
+  .minor-button a,
+  input.minor-button,
+  .minor-button input {
+    font-size: calc(0.78rem + 0.195 * (100vw - 18.75rem) / 56.25);
+  }
+}
+@media (min-width: 75rem) {
+  button.minor-button, .minor-button button,
+  a.minor-button,
+  .minor-button a,
+  input.minor-button,
+  .minor-button input {
+    font-size: 0.975rem;
+  }
+}
+button.minor-button, .minor-button button,
+a.minor-button,
+.minor-button a,
+input.minor-button,
+.minor-button input {
+  padding: 0.35em 0.65em;
 }/*# sourceMappingURL=styles.css.map */

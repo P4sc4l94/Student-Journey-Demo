@@ -1,8 +1,219 @@
 @use 'sass:color';
+@use "sass:list";
 @use 'sass:math';
 @use 'breakpoints' as *;
 // @use '../config/variables' as *;
 
+
 // ================
 // ALR + ROYAL MIXINS
 // ================
+
+// Returns a rem units from pixel value
+// Ex. font-size: rem(16); 
+@function rem($pixels, $context: 16px) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return math.div($pixels, $context) * 1rem;
+}
+
+// Grid Items Mixin (School Content Section)
+@mixin gridItems (
+  $_x-number: "null",
+  $_mq-small: $mq-600,
+  $_mq-large: $mq-1000,
+  $_x-gridGapSmall: 1rem,
+  $_x-gridGapLarge: 1.5rem
+) {
+
+  @media (max-width: maxMQ($_mq-small)) {
+    li {
+      ~ li {
+        margin-top: $_x-gridGapLarge;
+      }
+    }
+  }
+
+  @media (min-width: $_mq-small) {
+    display: grid;
+    grid-gap: $_x-gridGapSmall;
+    grid-template-columns: repeat(2, 1fr);
+
+    @if $_x-number == "3" {
+      grid-template-rows: repeat(2, auto);
+
+      li {
+        &:last-child {
+          grid-column: span 2;
+        }
+      }
+    } 
+    
+    @else if $_x-number == "4" {
+      grid-template-rows: repeat(2, 1fr);
+    } 
+    
+    @else if $_x-number == "5" {
+      grid-template-rows: repeat(3, 1fr);
+
+      li {
+        &:last-child {
+          grid-column: span 2;
+        }
+      }
+    } 
+    
+    @else if $_x-number == "6" {
+      grid-template-rows: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: $_mq-large) {
+    grid-gap: $_x-gridGapLarge;
+
+    @if $_x-number == "3" {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+
+      li {
+        &:last-child {
+          grid-column: auto;
+        }
+      }
+    } 
+    
+    @else if $_x-number == "4" {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+    } 
+    
+    @else if $_x-number == "5" {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+
+      li {
+        grid-column: span 2;
+
+        &:last-child {
+          grid-column-end: -2;
+        }
+
+        &:nth-last-child(2) {
+          grid-column-end: 4;
+        }
+      }
+    } 
+    
+    @else if $_x-number == "6" {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+}
+
+// Mixin: Outputs a @font-face rule
+
+@mixin fontFace($_p-fileName,
+$_f-fontFamily: $_fileName,
+$_f-fontWeight: normal,
+$_f-fontStyle: normal) {
+  @font-face {
+    font-family: "#{$_f-fontFamily}";
+    font-weight: $_f-fontWeight;
+    font-style: $_f-fontStyle;
+    src: url("#{$_p-fileName}.woff2") format("woff2");
+  }
+}
+
+// ================
+// Mixin: Creates a Flexbox-based "sticky" footer
+
+@mixin stickyFooter($_x-content, $_x-wrapper: "body") {
+  #{$_x-wrapper} {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    & > * {
+      flex-shrink: 0;
+    }
+  }
+
+  #{$_x-content} {
+    flex-grow: 1;
+  }
+}
+
+@mixin fluidRem(
+  $_x-prop,
+  $_d-minRem,
+  $_d-maxRem,
+  $_mq-min: $mq-300,
+  $_mq-max: $mq-1200
+) {
+  $_d-mid: "";
+
+  @for $_x-i from 1 through list.length($_d-maxRem) {
+    $_d-iMin: list.nth($_d-minRem, $_x-i);
+    $_d-iMax: list.nth($_d-maxRem, $_x-i);
+
+    @if $_d-iMin == 0 {
+      $_d-iMin: 0rem;
+    }
+
+    @if $_d-iMax == 0 {
+      $_d-iMax: 0rem;
+    }
+
+    $_d-iMid: calc(
+      #{$_d-iMin} +
+        #{math.div(($_d-iMax - $_d-iMin), 1rem)} *
+        ((100vw - #{$_mq-min}) / #{math.div(($_mq-max - $_mq-min), 1rem)})
+    );
+
+    @if ($_x-i > 1) {
+      $_d-mid: $_d-mid + " ";
+    }
+    $_d-mid: $_d-mid + $_d-iMid;
+  }
+  #{$_x-prop}: #{$_d-minRem};
+
+  @media (min-width: #{$_mq-min}) {
+    #{$_x-prop}: #{$_d-mid};
+  }
+
+  @media (min-width: #{$_mq-max}) {
+    #{$_x-prop}: #{$_d-maxRem};
+  }
+}
+
+// ================
+// Mixin: Resizes an <iframe> to fit its container
+
+@mixin iframeWrapper($_d-iframeWidth: 560, $_d-iframeHeight: 315) {
+  position: relative;
+  width: 100%;
+  height: 0;
+  // padding-top: ($_d-iframeHeight / $_d-iframeWidth) * 100%;
+  padding-top: math.div($_d-iframeHeight, $_d-iframeWidth) * 100%;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+  }
+}
+
+// ================
+// Function: Returns a breakpoint value for use in a max media query
+
+@function maxMQ($_mq-breakpoint) {
+  @return $_mq-breakpoint - 0.0625rem;
+}

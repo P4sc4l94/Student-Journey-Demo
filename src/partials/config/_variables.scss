@@ -1,8 +1,34 @@
 @use 'sass:color';
 @use 'sass:math';
-@use '../utilities/breakpoints';
+@use "../utilities/breakpoints" as *; 
 @use '../utilities/alr-mixins';
 
 // ================
 // VARIABLES
 // ================
+
+// ================
+// Fonts
+$f-headlineFont: '';
+$f-bodyFont: '';
+
+// ================
+// Colors
+$c-link: blue;
+$c-error: red;
+
+// Focus Styles
+$x-focusOutline: 3px solid orange; // update color to contrast with brand & background colors
+$d-focusOutlineOffset: 1px;
+
+// ================
+// Common Dimensions
+$d-centerMaxWidth: $mq-1400;
+$d-centerWidth: 90%;
+$d-sectionPaddingSm: 4vw 0;
+$d-sectionPaddingLg: 6vw 0;
+
+$d-gridCalc: calc(#{math.div((100% - $d-centerWidth), 2)});
+$d-gridMaxWidth: math.div($d-centerMaxWidth, 1.8);
+
+$t-transition: all 0.25s ease-in-out;
