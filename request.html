@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request | Student Journey Demo</title>
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <div class="lp-header">
+    <div class="center lp-header-wrapper">
+      <div class="school-name">School Name</div>
+      <!-- NAVBAR -->
+      <nav class="main-nav" id="navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="/explore">Explore</a></li>
+          <li class="nav-item"><a href="/guide">Guide</a></li>
+          <li class="nav-item"><a href="/request" class="active">Request</a></li>
+          <li class="nav-item"><a href="/apply">Apply</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+   <main>
+    <section class="lp-intro-form">
+      <div class="center lp-intro-form-wrapper">
+        <div class="lp-intro-form-content">
+          <div class="lp-intro">
+            <h1>Tell Us About Your Goals</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus saepe nostrum eum porro accusantium ipsa ipsum aut dignissimos, sunt, id earum ut, rem culpa placeat quis excepturi repudiandae laudantium alias.</p>
+          </div>
+          <div class="lp-form">
+            <!-- FORM -->
+            <form action="/request-thanks.html">
+              <fieldset>
+                <label for="fName">First Name (Required)</label>
+                <input type="text" id="fName" name="userFirstName">
+                <label for="lName">Last Name (Required)</label>
+                <input type="text" id="lName" name="userLastName">
+                <label for="email">Email (Required)</label>
+                <input type="email" id="email" name="userEmail" required>
+                <label for="phone">Phone Number</label>
+                <input type="phone" id="phone" name="userPhone">
+              </fieldset>
+              <fieldset>
+                <label for="program">Intended Program</label>
+                <select name="program" id="userProgram">
+                  <option value="">Select a program</option>
+                  <option value="A.A. in General Studies">A.A. in General Studies</option>
+                  <option value="B.A. in Literature">B.A. in Literature</option>
+                  <option value="B.S. in Natural Science">B.S. in Natural Science</option>
+                  <option value="Unsure">Unsure</option>
+                </select>
+              </fieldset>
+              <fieldset>
+                <legend>What is your biggest obstacle in pursuing a degree?</legend>
+                <input type="radio" id="finances" name="obstacle" value="Paying for school">
+                <label for="finances">Paying for school</label>
+                <input type="radio" name="obstacle" id="time" value="Having time for work and my studies">
+                <label for="time">Having time for work and my studies</label>
+                <input type="radio" name="obstacle" id="transcript" value="My transcript scores">
+                <label for="transcript">My transcript scores</label>
+              </fieldset>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video -->
+    <section class="lp-video">
+    <div class="center lp-video-wrapper">
+      <div class="lp-video-content">
+        <div class="video-intro">
+          <h2>Learn More About Our Campus</h2>
+          <p>Obcaecati facere, accusantium provident architecto voluptates fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="video-container">
+          <div>[VIDEO HERE]</div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- APPLY BTM -->
+    <section class="lp-apply lp-apply-btm">
+      <div class="center lp-apply-wrapper">
+        <div class="lp-apply-content">
+          <div class="lp-apply-copy">
+            <h1>Apply to Emerald U Today!</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia maiores dolores quibusdam veritatis odio non ex? Ea, laborum! Est laborum expedita facilis sint consequuntur pariatur at omnis in nesciunt sed!</p>
+          </div>
+          <div class="lp-apply-form">
+            <!-- FORM -->
+            <form action="">
+              <fieldset>
+                <label for="email">Email (Required)</label>
+                <input type="email" id="email" name="userEmail" required>
+                <input type="submit" value="Apply Now">
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+   </main>
+</body>
+</html>
